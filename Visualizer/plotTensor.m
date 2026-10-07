@@ -90,7 +90,7 @@ if strcmpi(tensor.coords, "cartesian")
     idx = getSliceData(slicedPlanes, sliceLocations, tensor);
 
     for i = 1:length(c1)
-        plotComponent(squeeze(tensor.tensor{c1(i), c2(i)}(idx{1}, idx{2}, idx{3}, idx{4}))', titleCharacter+titleAugment1+num2str(c1(i))+titleAugment2+num2str(c2(i))+"}", xLabelText, yLabelText, alpha)
+        plotComponent(squeeze(tensor.tensor{c1(i), c2(i)}(idx{1}, idx{2}, idx{3}, idx{4}))', [titleCharacter titleAugment1 num2str(c1(i)) titleAugment2 num2str(c2(i)) "}"], xLabelText, yLabelText, alpha)
     end
 else
     error('Unknown coordinate system, must be: "cartesian"')

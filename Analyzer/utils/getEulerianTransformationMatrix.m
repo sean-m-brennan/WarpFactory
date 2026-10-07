@@ -72,7 +72,7 @@ else
     warning('Unrecognized matrix size');
 end
 
-if sum(isinf(M),'all')
+if any(isinf(M(:)))
     warning("Eulerian Transformation is Infinite - Numerical Precision Insufficient")
 end
 
@@ -143,7 +143,7 @@ end
 %     M(:,:,:,:,4,4) = (X3./g10).^(1./2);
 
 % 
-% if sum(isinf(M),'all')
+% if any(isinf(M(:)))
 %     warning("Eulerian Transformation is Infinite - Numerical Precision Insufficient")
 % end
 % 

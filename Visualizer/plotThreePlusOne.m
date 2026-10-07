@@ -65,7 +65,7 @@ if strcmpi(metric.coords, "cartesian")
 
     % Plot beta
     for i = 1:3
-        titleText = "\beta_"+num2str(i);
+        titleText = ["\beta_" num2str(i)];
         plotComponent(squeeze(betaDown{i}(idx{1}, idx{2}, idx{3}, idx{4}))', titleText, xLabelText, yLabelText, alpha)
     end
 
@@ -73,7 +73,7 @@ if strcmpi(metric.coords, "cartesian")
     c = [1, 1; 1, 2; 1, 3; 2, 2; 2, 3; 3, 3];
 
     for i = 1:size(c, 1)
-        titleText = "\gamma_{"+num2str(c(i, 1))+num2str(c(i, 2))+"}";
+        titleText = ["\gamma_{" num2str(c(i, 1)) num2str(c(i, 2)) "}"];
         plotComponent(squeeze(gammaDown{c(i, 1), c(i, 2)}(idx{1}, idx{2}, idx{3}, idx{4}))', titleText, xLabelText, yLabelText, alpha)
     end
 

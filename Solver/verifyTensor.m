@@ -51,7 +51,7 @@ if isfield(inputTensor,'type')
     % Coords
     if isfield(inputTensor,'coords')
         if strcmpi(string(inputTensor.coords), "cartesian")
-            dispMessage("coords: " + string(inputTensor.coords),suppressMsgs);
+            dispMessage(["coords: " inputTensor.coords],suppressMsgs);
         else
             warning("Non-cartesian coordinates are not supported at this time. Set .coords to 'cartesian'.")
         end
@@ -65,7 +65,7 @@ if isfield(inputTensor,'type')
            strcmpi(string(inputTensor.index), "covariant") || ...
            strcmpi(string(inputTensor.index), "mixedupdown") || ...
            strcmpi(string(inputTensor.index), "mixeddownup")
-            dispMessage("index: " + string(inputTensor.index),suppressMsgs);
+            dispMessage(["index: " inputTensor.index],suppressMsgs);
         else
             warning("Unknown index");
             verified = 0;
@@ -85,7 +85,7 @@ warning(userBacktraceState,'backtrace')
 % Function for displaying messages
 function dispMessage(msg,sM)
     if ~sM
-        fprintf(msg+"\n")
+        fprintf([msg "\n"])
     end
 end
 end
